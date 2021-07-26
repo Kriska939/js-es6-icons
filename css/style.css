@@ -1,0 +1,9 @@
+.navbar-brand {
+    padding-left: 20px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#bottom-header {
+    min-height: 70px;
+
+}
