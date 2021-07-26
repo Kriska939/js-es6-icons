@@ -4,6 +4,12 @@
 }
 
 #bottom-header {
-    min-height: 70px;
+    height: 70px;
 
+}
+
+.bg-grey {
+    background-color: #dddddd;
+    /* calcolo tutta l'altezza viewport - l'altezza dell'header top/bottom:*/
+    height: calc(100vh - 122px);
 }
