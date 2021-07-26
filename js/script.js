@@ -19,23 +19,46 @@ Creiamo una select con i tipi di icone e usiamola per filtrare le icone
 
 // MILESTONE 1:
 
-let cardTemplate = "";
-
-icons.forEach((icon) => {
-    cardTemplate += `
-    <div class="col col-sm-4 col-md-2">
-        <div class="card">
-            <div class="card-body text-center">
-                <i class="${icon.family} ${icon.prefix}${icon.name} ${icon.prefix}2x"></i>
-                    <p>${icon.name.toLocaleUpperCase()}</p>
-            </div>
-        </div>
-    </div>`;
-});
-
 const displayHere = document.querySelector("#container-icons .row");
 
-displayHere.innerHTML = cardTemplate;
+const printIcons = (array, targetElement) => {
+    let cardTemplate = "";
 
-//---------------------Milestone 2: 
+    array.forEach((icon, index) => {
 
+        // offset da inserire solo se:
+
+        const hasOffset = index === 0 || index % 5 === 0 ? "offset-md-1" : "";
+
+        //contenuto delle card:
+        cardTemplate += `
+        <div class="col col-sm-4 col-md-2 ${hasOffset}">
+            <div class="card">
+                <div class="card-body text-center">
+                    <i class="${icon.family} ${icon.prefix}${icon.name} ${icon.prefix}2x"></i>
+                        <p>${icon.name.toLocaleUpperCase()}</p>
+                </div>
+            </div>
+        </div>`;
+    });
+
+    targetElement.innerHTML = cardTemplate;
+};
+
+printIcons(icons, displayHere);
+
+
+
+//---------------------Milestone 3: 
+
+const selectedFilter = document.getElementById("filter-type");
+
+selectedFilter.addEventListener("change", () => {
+    const filterValue = selectedFilter.value;
+
+    // se ho all, stampo tutto:
+    if (filterValue === "all") {
+        printIcons(icons, displayHere);
+        return;
+    }
+});
