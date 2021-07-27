@@ -17,7 +17,7 @@ Creiamo una select con i tipi di icone e usiamola per filtrare le icone
 //     family: 'fas',
 //   }
 
-// MILESTONE 1:
+// MILESTONE 1 e 2:
 
 const displayHere = document.querySelector("#container-icons .row");
 
@@ -30,18 +30,17 @@ const printIcons = (array, targetElement) => {
 
         const hasOffset = index === 0 || index % 5 === 0 ? "offset-md-1" : "";
 
-        //contenuto delle card:
+        //contenuto delle card (compreso Milestone 2):
         cardTemplate += `
         <div class="col col-sm-4 col-md-2 ${hasOffset}">
             <div class="card h-100">
                 <div class="card-body text-center">
-                    <i class="${icon.family} ${icon.prefix}${icon.name} ${icon.prefix}2x"></i>
+                    <i class="${icon.family} ${icon.prefix}${icon.name} ${icon.prefix}2x ${icon.type}" ></i>
                         <p>${icon.name.toLocaleUpperCase()}</p>
                 </div>
             </div>
         </div>`;
     });
-
     targetElement.innerHTML = cardTemplate;
 };
 

@@ -11,7 +11,23 @@
 .bg-grey {
     background-color: #dddddd;
     /* mettere min-height:*/
-    height: 100%;
+    min-height: calc(100vh - 124px);
 }
 
 /* AGGIUNTA COLORI ICONE */
+
+.animal {
+    color: blue;
+}
+
+.vegetable {
+    color: rgb(255, 187, 0);
+}
+
+.user {
+    color: purple;
+}
+
+.company {
+    color: red;
+}
