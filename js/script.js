@@ -33,7 +33,7 @@ const printIcons = (array, targetElement) => {
         //contenuto delle card:
         cardTemplate += `
         <div class="col col-sm-4 col-md-2 ${hasOffset}">
-            <div class="card">
+            <div class="card h-100">
                 <div class="card-body text-center">
                     <i class="${icon.family} ${icon.prefix}${icon.name} ${icon.prefix}2x"></i>
                         <p>${icon.name.toLocaleUpperCase()}</p>
@@ -49,7 +49,7 @@ printIcons(icons, displayHere);
 
 
 
-//---------------------Milestone 3: 
+//Milestone 3: 
 
 const selectedFilter = document.getElementById("filter-type");
 
@@ -61,4 +61,9 @@ selectedFilter.addEventListener("change", () => {
         printIcons(icons, displayHere);
         return;
     }
+
+    // filtro per tipo:
+    const filteredResult = icons.filter((item) => filterValue === item.type);
+    printIcons(filteredResult, displayHere);
 });
+

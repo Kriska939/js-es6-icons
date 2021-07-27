@@ -10,6 +10,8 @@
 
 .bg-grey {
     background-color: #dddddd;
-    /* calcolo tutta l'altezza viewport - l'altezza dell'header top/bottom:*/
+    /* mettere min-height:*/
     height: 100%;
 }
+
+/* AGGIUNTA COLORI ICONE */
